@@ -55,8 +55,29 @@ context('Dev Finances Agilizei', () => {
 
     });
 
-    after(()=>{
-        cy.get('#data-table tbody tr').should('have.length', 0)
-    });
+    // after(()=>{
+    //     cy.get('#data-table tbody tr').should('have.length', 0)
+    // });
 
+    it.only('Valida saldo com diversas transações', () => {
+        
+        cy.get('#transaction .button').click();
+        cy.get('#description').type('Salário')
+        cy.get('[name=amount]').type(1100)
+        cy.get('#date').type('2021-03-17')
+        cy.get('button').contains('Salvar').click();
+
+
+        cy.get('#transaction .button').click();
+        cy.get('#description').type('Mercado')
+        cy.get('[name=amount]').type(-100)
+        cy.get('#date').type('2021-03-17')
+        cy.get('button').contains('Salvar').click();
+
+        cy.get('#data-table tbody tr')
+          .each(($el, index, $list) => {
+              cy.log(index)
+          })
+
+    });
 });
