@@ -1,6 +1,6 @@
 # Projeto Cypress
 
-O projeto **Cypress** foi desenvolvido na Semana @Agilizei , com o objetivo de aprender sobre a ferramenta. 
+O projeto foi desenvolvido na Semana @Agilizei , com o objetivo de aprender sobre a ferramenta **Cypress**. 
 <img src="images/logo-agilizei.png" width="50">
 
 
@@ -8,11 +8,11 @@ O projeto **Cypress** foi desenvolvido na Semana @Agilizei , com o objetivo de a
 
 * **Codes**
 
-![Image of Model Carosel](imagem-web-pageinicial.png)
+![Image of Codes](images/projeto-cypress.png)
 
 * **Testes automatizados**
 
-![Image of Colaborador](image-web-colaborador.png)
+![Image of Testes](image-web-colaborador.png)
 
 
 ### 
