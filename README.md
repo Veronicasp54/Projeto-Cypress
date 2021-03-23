@@ -1,8 +1,7 @@
 # Projeto Cypress
 
 O projeto ***Cypress*** foi desenvolvido na Semana @Agilizei , com o objetivo de aprender sobre a ferramenta. 
-![Image of Agilizei](images/logo-agilizei.png=200x)
-<img src="images/logo-agilizei.png" width="200">
+<img src="images/logo-agilizei.png" width="50">
 
 
 ## Background Do Projeto 
