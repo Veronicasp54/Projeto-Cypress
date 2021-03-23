@@ -7,12 +7,7 @@ O projeto **Cypress** foi desenvolvido na Semana @Agilizei , com o objetivo de a
 ## Background Do Projeto 
 
 * **Codes**
-<<<<<<< HEAD
-<img src="images/projeto-cypress.png" width="500">
-=======
-
 ![Image of Model Carosel](imagem-web-pageinicial.png)
->>>>>>> parent of c43b14a (Inserindo funcionalidade de validação)
 
 * **Testes automatizados**
 
