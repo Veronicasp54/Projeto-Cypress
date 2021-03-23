@@ -61,7 +61,7 @@ context('Dev Finances Agilizei', () => {
     //     cy.get('#data-table tbody tr').should('have.length', 0)
     // });
 
-    it.only('Valida saldo com diversas transações', () => {
+    it('Valida saldo com diversas transações', () => {
         
         cy.get('#transaction .button').click();
         cy.get('#description').type('Salário')

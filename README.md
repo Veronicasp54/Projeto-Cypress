@@ -6,12 +6,11 @@ O projeto **Cypress** foi desenvolvido na Semana @Agilizei , com o objetivo de a
 
 ## Background Do Projeto 
 
-* **Codes**
+* **Testes Chorme**
 <img src="images/projeto-cypress.png">
 
-* **Testes automatizados**
-
-![Image of Colaborador](image-web-colaborador.png)
+* **Dashboard Cypress**
+<img src="images/dashboard-cypress.png">
 
 
 ### 
