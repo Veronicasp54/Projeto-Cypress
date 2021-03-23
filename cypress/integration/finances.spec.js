@@ -76,8 +76,13 @@ context('Dev Finances Agilizei', () => {
 
         cy.get('#data-table tbody tr')
           .each(($el, index, $list) => {
-              cy.log(index)
-          })
+
+            cy.get($el).find('td.income, td.expense')
+              .invoke('text').then(text => {
+
+                  cy.log(text)
+              })
+            })
 
     });
 });
