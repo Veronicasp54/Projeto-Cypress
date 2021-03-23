@@ -1,29 +1,24 @@
 /// <reference types="cypress"/> 
 
-import {format, prepareLocalStorage} from '../support/utils'
+import {format} from '../support/utils'
 
 context('Dev Finances Agilizei', () => {
 
     before(()=>{
-        //cy.get('#data-table tbody tr').should('have.length', 0)
-        cy.visit('https://devfinance-agilizei.netlify.app', {
-            onBeforeLoad: (win) =>{
-                prepareLocalStorage(win)
-            }
-
-        })
+        cy.get('#data-table tbody tr').should('have.length', 0)
+        cy.visit('https://devfinance-agilizei.netlify.app')
     });
 
     it('Cadastrar entrada', () => {
 
         cy.get('#transaction .button').click();
         cy.get('#description').type('Salário')
-        cy.get('[name=amount]').type(800)
+        cy.get('[name=amount]').type(1100)
         cy.get('#date').type('2021-03-17')
         cy.get('button').contains('Salvar').click();
 
 
-        cy.get('#data-table tbody tr').should('have.length', 3)
+        cy.get('#data-table tbody tr').should('have.length', 1)
 
         // cy.get('td .description').should('have.class', 'Salário')
         // contains('Salário adiantado')
@@ -40,31 +35,46 @@ context('Dev Finances Agilizei', () => {
         cy.get('button').contains('Salvar').click();
 
 
-        cy.get('#data-table tbody tr').should('have.length', 4)
+        cy.get('#data-table tbody tr').should('have.length', 2)
         
     });
 
     it('Limpar histórico', () => {
+        const entrada = 'Salário'
+        const saida ='Mercado'
 
         cy.get('td.description')
-            .contains("Salário")
+            .contains(entrada)
             .parent() //pai
             .find('img[onclick*=remove]') //busca
             .click()
 
             cy.get('td.description')
-            .contains("Mercado")
+            .contains(saida)
             .siblings() //irmãos
             .children('img[onclick*=remove]') //filtrar filho
             .click()
 
     });
 
-    after(()=>{
-         cy.get('#data-table tbody tr').should('have.length', 2)
-     });
+    // after(()=>{
+    //     cy.get('#data-table tbody tr').should('have.length', 0)
+    // });
 
-    it('Validar transações', () => {
+    it.only('Valida saldo com diversas transações', () => {
+        
+        cy.get('#transaction .button').click();
+        cy.get('#description').type('Salário')
+        cy.get('[name=amount]').type(800)
+        cy.get('#date').type('2021-03-17')
+        cy.get('button').contains('Salvar').click();
+
+
+        cy.get('#transaction .button').click();
+        cy.get('#description').type('Mercado')
+        cy.get('[name=amount]').type(-100)
+        cy.get('#date').type('2021-03-17')
+        cy.get('button').contains('Salvar').click();
 
         let incomes = 0
         let expenses = 0
@@ -76,9 +86,9 @@ context('Dev Finances Agilizei', () => {
               .invoke('text').then(text => {
 
                     if(text.includes('-')){
-                        expenses = expenses + format(text)
+                        expenses += format(text)
                     } else {
-                        incomes = incomes + format(text)
+                        incomes += format(text)
                     }
 
                     cy.log('Entradas', incomes)
