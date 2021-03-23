@@ -7,8 +7,7 @@ O projeto foi desenvolvido na Semana @Agilizei , com o objetivo de aprender sobr
 ## Background Do Projeto 
 
 * **Codes**
-
-![Image of Codes](images/projeto-cypress.png)
+<img src="images/projeto-cypress.png" width="500">
 
 * **Testes automatizados**
 
