@@ -10,7 +10,7 @@ O projeto **Cypress** foi desenvolvido na Semana @Agilizei , com o objetivo de a
 <img src="images/projeto-cypress.png">
 
 * **Dashboard Cypress**
-<img src="images/dashboard-cypress.png">
+<img src="images/dashboard-cypress.png"> 
 
 
 ### 
