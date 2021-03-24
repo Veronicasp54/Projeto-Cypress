@@ -33,7 +33,7 @@ jobs:
       record: true
       group: 'Semana Agilizei'
     env:
-      CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
      
     name: Upload videos
     uses: actions/upload-artifact@v2.2.0
